@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-layout',
   template: '<router-outlet></router-outlet>',
 })
-export class AppComponent {}
+export class LayoutComponent {
+  constructor() {}
+
+  ngOnInit() {}
+}

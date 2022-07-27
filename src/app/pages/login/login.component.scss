@@ -1,0 +1,52 @@
+.container {
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+}
+
+.login-container {
+  max-width: 430px;
+  border: 1px solid rgb(12, 26, 87, 0.4);
+  border-radius: 5%;
+  margin: auto;
+  box-shadow: rgba(10, 26, 107, 0.2) 0px 5px 20px 0px;
+}
+
+.login-form {
+  max-width: 100%;
+  margin: 25px 16px;
+}
+
+.login-form-header {
+  position: relative;
+  height: 80px;
+  margin: 0px 10px;
+}
+.login-form-header img {
+  height: 80px;
+}
+
+.login-form-header > #text-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-form-margin {
+  margin-bottom: 20px;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
+}
+
+.login-form-footer {
+  width: 100%;
+  margin: 5px;
+  font-style: italic;
+}
