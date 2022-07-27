@@ -16,124 +16,133 @@
         </h1>
       </a>
     </div>
-    <ul
-      *ngIf="menuItems"
-      nz-menu
-      nzTheme="dark"
-      nzMode="inline"
-      [nzInlineCollapsed]="isCollapsed"
-    >
-      <ng-container *ngFor="let menu of menuItems">
-        <li *ngIf="menu.subItems.length == 0" nz-menu-item nzMatchRouter>
-          <a [routerLink]="menu?.link">{{ menu?.label }}</a>
-        </li>
-        <li
-          *ngIf="menu.subItems.length > 0"
-          nz-submenu
-          [nzTitle]="menu.label || 'Menu Item'"
-          nzIcon="table"
-        >
-          <ul>
-            <ng-container *ngFor="let menu of menu.subItems">
-              <li *ngIf="menu.subItems.length == 0" nz-menu-item nzMatchRouter>
-                <a [routerLink]="menu?.link">{{ menu?.label }}</a>
-              </li>
-              <li
-                *ngIf="menu.subItems.length > 0"
-                nz-submenu
-                [nzTitle]="menu.label || 'Menu Item'"
-                nzIcon="table"
-              >
-                <ul>
-                  <ng-container *ngFor="let menu of menu.subItems">
-                    <li
-                      *ngIf="menu.subItems.length == 0"
-                      nz-menu-item
-                      nzMatchRouter
-                    >
-                      <a [routerLink]="menu?.link">{{ menu?.label }}</a>
-                    </li>
-                    <li
-                      *ngIf="menu.subItems.length > 0"
-                      nz-submenu
-                      [nzTitle]="menu.label || 'Menu Item'"
-                      nzIcon="table"
-                    >
-                      <ul>
-                        <ng-container *ngFor="let menu of menu.subItems">
-                          <li
-                            *ngIf="menu.subItems.length == 0"
-                            nz-menu-item
-                            nzMatchRouter
-                          >
-                            <a [routerLink]="menu?.link">{{ menu?.label }}</a>
-                          </li>
-                          <li
-                            *ngIf="menu.subItems.length > 0"
-                            nz-submenu
-                            [nzTitle]="menu.label || 'Menu Item'"
-                            nzIcon="table"
-                          >
-                            <ul>
-                              <ng-container *ngFor="let menu of menu.subItems">
-                                <li
-                                  *ngIf="menu.subItems.length == 0"
-                                  nz-menu-item
-                                  nzMatchRouter
+    <div class="sidebar-menu-container">
+      <ul
+        *ngIf="menuItems"
+        nz-menu
+        nzTheme="dark"
+        nzMode="inline"
+        [nzInlineCollapsed]="isCollapsed"
+      >
+        <ng-container *ngFor="let menu of menuItems">
+          <li *ngIf="menu.subItems.length == 0" nz-menu-item nzMatchRouter>
+            <a [routerLink]="menu?.link">{{ menu?.label }}</a>
+          </li>
+          <li
+            *ngIf="menu.subItems.length > 0"
+            nz-submenu
+            [nzTitle]="menu.label || 'Menu Item'"
+            nzIcon="table"
+          >
+            <ul>
+              <ng-container *ngFor="let menu of menu.subItems">
+                <li
+                  *ngIf="menu.subItems.length == 0"
+                  nz-menu-item
+                  nzMatchRouter
+                >
+                  <a [routerLink]="menu?.link">{{ menu?.label }}</a>
+                </li>
+                <li
+                  *ngIf="menu.subItems.length > 0"
+                  nz-submenu
+                  [nzTitle]="menu.label || 'Menu Item'"
+                  nzIcon="table"
+                >
+                  <ul>
+                    <ng-container *ngFor="let menu of menu.subItems">
+                      <li
+                        *ngIf="menu.subItems.length == 0"
+                        nz-menu-item
+                        nzMatchRouter
+                      >
+                        <a [routerLink]="menu?.link">{{ menu?.label }}</a>
+                      </li>
+                      <li
+                        *ngIf="menu.subItems.length > 0"
+                        nz-submenu
+                        [nzTitle]="menu.label || 'Menu Item'"
+                        nzIcon="table"
+                      >
+                        <ul>
+                          <ng-container *ngFor="let menu of menu.subItems">
+                            <li
+                              *ngIf="menu.subItems.length == 0"
+                              nz-menu-item
+                              nzMatchRouter
+                            >
+                              <a [routerLink]="menu?.link">{{ menu?.label }}</a>
+                            </li>
+                            <li
+                              *ngIf="menu.subItems.length > 0"
+                              nz-submenu
+                              [nzTitle]="menu.label || 'Menu Item'"
+                              nzIcon="table"
+                            >
+                              <ul>
+                                <ng-container
+                                  *ngFor="let menu of menu.subItems"
                                 >
-                                  <a [routerLink]="menu?.link">{{
-                                    menu?.label
-                                  }}</a>
-                                </li>
-                                <li
-                                  *ngIf="menu.subItems.length > 0"
-                                  nz-submenu
-                                  [nzTitle]="menu.label || 'Menu Item'"
-                                  nzIcon="table"
-                                >
-                                  <ul>
-                                    <ng-container
-                                      *ngFor="let menu of menu.subItems"
-                                    >
-                                      <li
-                                        *ngIf="menu.subItems.length == 0"
-                                        nz-menu-item
-                                        nzMatchRouter
+                                  <li
+                                    *ngIf="menu.subItems.length == 0"
+                                    nz-menu-item
+                                    nzMatchRouter
+                                  >
+                                    <a [routerLink]="menu?.link">{{
+                                      menu?.label
+                                    }}</a>
+                                  </li>
+                                  <li
+                                    *ngIf="menu.subItems.length > 0"
+                                    nz-submenu
+                                    [nzTitle]="menu.label || 'Menu Item'"
+                                    nzIcon="table"
+                                  >
+                                    <ul>
+                                      <ng-container
+                                        *ngFor="let menu of menu.subItems"
                                       >
-                                        <a [routerLink]="menu?.link">{{
-                                          menu?.label
-                                        }}</a>
-                                      </li>
-                                      <li
-                                        *ngIf="menu.subItems.length > 0"
-                                        nz-submenu
-                                        [nzTitle]="menu.label || 'Menu Item'"
-                                        nzIcon="table"
-                                      >
-                                        <ul>
-                                          <!-- <ng-container
+                                        <li
+                                          *ngIf="menu.subItems.length == 0"
+                                          nz-menu-item
+                                          nzMatchRouter
+                                        >
+                                          <a [routerLink]="menu?.link">{{
+                                            menu?.label
+                                          }}</a>
+                                        </li>
+                                        <li
+                                          *ngIf="menu.subItems.length > 0"
+                                          nz-submenu
+                                          [nzTitle]="menu.label || 'Menu Item'"
+                                          nzIcon="table"
+                                        >
+                                          <ul>
+                                            <!-- Lv 6 Not Implemented-->
+                                            <!-- <ng-container
                                           [ngTemplateOutlet]="renderMenu"
                                           [ngTemplateOutletContext]="{ menus: menu.subItems }"
                                         ></ng-container> -->
-                                        </ul>
-                                      </li>
-                                    </ng-container>
-                                  </ul>
-                                </li>
-                              </ng-container>
-                            </ul>
-                          </li>
-                        </ng-container>
-                      </ul>
-                    </li>
-                  </ng-container>
-                </ul>
-              </li>
-            </ng-container>
-          </ul>
-        </li>
-      </ng-container>
-    </ul>
+                                          </ul>
+                                        </li>
+                                      </ng-container>
+                                    </ul>
+                                  </li>
+                                </ng-container>
+                              </ul>
+                            </li>
+                          </ng-container>
+                        </ul>
+                      </li>
+                    </ng-container>
+                  </ul>
+                </li>
+              </ng-container>
+            </ul>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
   </nz-sider>
   <nz-layout>
     <nz-header>

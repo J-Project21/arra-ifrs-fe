@@ -76,3 +76,11 @@ nz-content {
   background: #fff;
   height: 100%;
 }
+nz-sider .sidebar-menu-container {
+  height: 90%;
+  overflow-y: scroll;
+}
+
+.sidebar-menu-container::-webkit-scrollbar {
+  width: 0px;
+}
