@@ -1,1 +1,15 @@
-<p>form works!</p>
+<nz-page-header
+  class="site-page-header"
+  [nzTitle]="formTitle"
+  [nzSubtitle]="formSubtitle"
+>
+  <nz-breadcrumb nz-page-header-breadcrumb>
+    <nz-breadcrumb-item>
+      <i nz-icon nzType="home"></i> Home
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item>
+      <a routerLink="/form">Form</a>
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item>{{ formCode }}</nz-breadcrumb-item>
+  </nz-breadcrumb>
+</nz-page-header>

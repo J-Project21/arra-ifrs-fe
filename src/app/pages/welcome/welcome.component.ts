@@ -7,8 +7,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./welcome.component.scss'],
 })
 export class WelcomeComponent implements OnInit {
-  isCollapsed = false;
-  appMode = environment.title;
+  public appMode = environment.production;
 
   constructor() {}
 

@@ -19,6 +19,11 @@ interface MenuItem {
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  currentUser = {
+    userName: 'Anonymous',
+    groupName: 'Anonymous',
+  };
+
   isCollapsed = false;
   appMode = environment.title;
   appModeTextType: any = 'success';
@@ -27,8 +32,10 @@ export class HomeComponent implements OnInit {
 
   constructor() {
     let menuString = localStorage.getItem('menu') || '';
+    this.currentUser.userName = localStorage.getItem('username') || 'Anonymous';
+    this.currentUser.groupName = localStorage.getItem('group') || 'Anonymous';
+
     this.menuItems = JSON.parse(menuString)?.data || [];
-    console.log(this.menuItems);
   }
 
   ngOnInit() {

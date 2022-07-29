@@ -14,27 +14,24 @@
 
 .login-form {
   max-width: 100%;
-  margin: 25px 16px;
+  margin: 5px 16px 25px 16px;
+}
+
+#loginFormHeader {
+  background-image: url("./../../../assets/batm-full-compact.png");
 }
 
 .login-form-header {
-  position: relative;
-  height: 80px;
-  margin: 0px 10px;
+  height: 100px;
+  width: 100%;
+  flex: none;
 }
 .login-form-header img {
   height: 80px;
 }
 
-.login-form-header > #text-logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .login-form-margin {
-  margin-bottom: 20px;
+  margin-bottom: 35px;
 }
 
 .login-form-forgot {

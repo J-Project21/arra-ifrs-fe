@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,7 +6,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './form.component.html',
 })
 export class FormComponent implements OnInit {
-  constructor() {}
+  formCode = 'Form';
+  formTitle = 'Form Title';
+  formSubtitle = 'Form Description';
+  constructor(private activatedRoute: ActivatedRoute) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.formCode = this.activatedRoute.snapshot.params['formCode'];
+  }
 }

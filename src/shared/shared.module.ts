@@ -7,6 +7,9 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { IconsProviderModule } from 'src/app/icons-provider.module';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { NzSpaceModule } from 'ng-zorro-antd/space';
 
 const usedModules = [
   NzLayoutModule,
@@ -17,6 +20,9 @@ const usedModules = [
   NzCheckboxModule,
   IconsProviderModule,
   NzTypographyModule,
+  NzPageHeaderModule,
+  NzBreadCrumbModule,
+  NzSpaceModule,
 ];
 
 @NgModule({

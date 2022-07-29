@@ -6,12 +6,14 @@
       class="login-form"
       (ngSubmit)="submitForm()"
     >
-      <div nz-row class="login-form-header login-form-margin">
-        <div nz-col id="image">
-          <img src="assets/robin.png" alt="logo" />
-        </div>
-        <div nz-col id="text-logo">
-          <h1>ARRA LOGIN</h1>
+      <div nz-row class="login-form-margin" id="loginFormHeader">
+        <div nz-space nzAlign="center" class="login-form-header">
+          <div nz-col nzSpan="8" id="image">
+            <img src="assets/robin.png" alt="logo" />
+          </div>
+          <div nz-col id="text-logo">
+            <h1>ARRA LOGIN</h1>
+          </div>
         </div>
       </div>
       <nz-form-item>
