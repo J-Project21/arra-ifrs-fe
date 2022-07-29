@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
   validateForm!: FormGroup;
   isSubmitted = false;
   expired: boolean = false;
+  passwordIconType = 'eye';
+  passwordInputType = 'password';
 
   constructor(
     private notification: NzMessageService,
@@ -28,6 +30,14 @@ export class LoginComponent implements OnInit {
       userName: [null, [Validators.required]],
       password: [null, [Validators.required]],
     });
+  }
+
+  handlePasswordIconClick() {
+    console.log('icon clicked');
+    this.passwordInputType =
+      this.passwordInputType == 'password' ? 'text' : 'password';
+    this.passwordIconType =
+      this.passwordIconType == 'eye' ? 'eye-invisible' : 'eye';
   }
 
   submitForm(): void {

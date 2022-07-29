@@ -29,14 +29,25 @@
 
       <nz-form-item>
         <nz-form-control nzErrorTip="Please input your Password!">
-          <nz-input-group nzSize="large" nzPrefixIcon="lock" nzSuffixIcon="eye">
+          <nz-input-group
+            nzSize="large"
+            nzPrefixIcon="lock"
+            [nzAddOnAfter]="passwordSuffix"
+          >
             <input
-              type="password"
+              [type]="passwordInputType"
               nz-input
               formControlName="password"
               placeholder="Password"
             />
           </nz-input-group>
+          <ng-template #passwordSuffix>
+            <i
+              (click)="handlePasswordIconClick()"
+              nz-icon
+              [nzType]="passwordIconType"
+            ></i>
+          </ng-template>
         </nz-form-control>
       </nz-form-item>
 
