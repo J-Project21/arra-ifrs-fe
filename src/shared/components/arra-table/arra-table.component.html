@@ -1,0 +1,33 @@
+<ng-container *ngIf="dataTable$ | async as table; else skeletonTable">
+  <nz-table
+    nzSize="small"
+    [nzData]="table.data"
+    [nzFrontPagination]="false"
+    [nzShowTotal]="totalDataTemplate"
+    [nzTotal]="table.countData"
+    [nzPageSize]="table.pageSize"
+    [nzPageIndex]="table.pageIndex"
+    (nzQueryParams)="handletTableParamChanged($event)"
+  >
+    <thead>
+      <tr>
+        <th *ngFor="let column of headerColumns">{{ column.caption }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of table.data">
+        <td *ngFor="let column of headerColumns">
+          {{ data[column.field] }}
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</ng-container>
+
+<ng-template #skeletonTable>
+  <nz-skeleton [nzParagraph]="{ rows: 5 }" [nzActive]="true"></nz-skeleton>
+</ng-template>
+
+<ng-template let-number let-range="range" #totalDataTemplate>
+  <p>Showing {{ range[0] }} to {{ range[1] }} of {{ number }} entries</p>
+</ng-template>

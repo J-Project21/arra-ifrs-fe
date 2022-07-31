@@ -162,21 +162,45 @@
         <div
           nz-col
           nzSpan="20"
-          class="header-actions"
           nzAlign="middle"
           nzJustify="end"
+          class="header-actions"
         >
           <div nz-row nzAlign="middle" nzJustify="end">
             <nz-space nzSize="middle">
-              <i *nzSpaceItem nz-icon nzType="fullscreen" nzTheme="outline"></i>
-              <nz-badge *nzSpaceItem [nzCount]="5">
+              <span
+                (click)="toggleFullscreen()"
+                class="clickable full-screen"
+                *nzSpaceItem
+              >
+                <i
+                  nz-icon
+                  [nzType]="onFullscreen ? 'fullscreen-exit' : 'fullscreen'"
+                  nzTheme="outline"
+                ></i>
+              </span>
+              <nz-badge class="clickable approval" *nzSpaceItem [nzCount]="5">
                 <i nz-icon nzType="bell" nzTheme="outline"></i>
               </nz-badge>
-              <div *nzSpaceItem></div>
-              <span *nzSpaceItem
-                ><i nz-icon nzType="user" nzTheme="outline"></i
-                >{{ currentUser.userName }}</span
+              <span *nzSpaceItem></span>
+              <span
+                class="clickable account"
+                *nzSpaceItem
+                nz-button
+                nz-popover
+                [nzPopoverTitle]="currentUser.groupName"
+                [nzPopoverContent]="accountDetail"
+                nzPopoverPlacement="bottomRight"
               >
+                <i nz-icon nzType="user" nzTheme="outline"></i>
+                {{ currentUser.userName }}
+              </span>
+              <ng-template #accountDetail>
+                <span (click)="logOut()" class="clickable">
+                  <i nz-icon nzType="logout" nzTheme="outline"></i>
+                  Log out
+                </span>
+              </ng-template>
             </nz-space>
           </div>
         </div>

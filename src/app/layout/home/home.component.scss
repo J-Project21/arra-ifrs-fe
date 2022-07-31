@@ -18,9 +18,13 @@
 
 .menu-sidebar {
   position: relative;
+  height: 100%;
   z-index: 10;
-  min-height: 100vh;
   box-shadow: 2px 0 6px rgba(0, 21, 41, 0.25);
+  overflow-y: scroll;
+}
+.menu-sidebar::-webkit-scrollbar {
+  width: 0px;
 }
 
 .header-trigger {
@@ -58,8 +62,13 @@
   font-size: 18px;
   vertical-align: middle;
 }
+
 .header-actions i {
   font-size: 20px;
+}
+
+.clickable {
+  cursor: pointer;
 }
 
 nz-header {
@@ -69,22 +78,26 @@ nz-header {
 }
 
 nz-content {
-  margin: 14px 22px;
+  margin: 14px 0px 0px 14px;
+  padding: 0px 0px 0px 0px;
 }
 
 .inner-content {
   background: #fff;
-  min-height: 100%;
-}
-
-nz-sider .sidebar-menu-container {
-  //height: 90%;
+  height: 100%;
   overflow-y: scroll;
+  overflow-x: scroll;
 }
 
-.sidebar-menu-container::-webkit-scrollbar {
-  width: 0px;
-}
+// .inner-content::-webkit-scrollbar {
+// for styling the scrollbar
+// }
+
+// nz-sider .sidebar-menu-container {
+//   overflow-y: scroll;
+// }
+
 nz-footer {
+  height: 50px;
   text-align: center;
 }

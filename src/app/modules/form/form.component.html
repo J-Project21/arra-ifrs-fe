@@ -1,15 +1,24 @@
-<nz-page-header
-  class="site-page-header"
-  [nzTitle]="formTitle"
-  [nzSubtitle]="formSubtitle"
->
-  <nz-breadcrumb nz-page-header-breadcrumb>
-    <nz-breadcrumb-item>
-      <i nz-icon nzType="home"></i> Home
-    </nz-breadcrumb-item>
-    <nz-breadcrumb-item>
-      <a routerLink="/form">Form</a>
-    </nz-breadcrumb-item>
-    <nz-breadcrumb-item>{{ formCode }}</nz-breadcrumb-item>
-  </nz-breadcrumb>
-</nz-page-header>
+<div *ngIf="formControl$ | async as form" class="dynamic-form-layout">
+  <nz-page-header
+    class="site-page-header"
+    [nzTitle]="form.title"
+    [nzSubtitle]="form.description"
+  >
+    <nz-breadcrumb nz-page-header-breadcrumb>
+      <nz-breadcrumb-item>
+        <a routerLink="/"><i nz-icon nzType="home"></i> &nbsp; Home</a>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item>
+        <a routerLink="/form">Form</a>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item>{{ form.code }}</nz-breadcrumb-item>
+    </nz-breadcrumb>
+  </nz-page-header>
+  <div class="form-display-table">
+    <arra-table
+      [dataTable$]="tableData$"
+      [headerColumns]="form.columns"
+      (tableParamChanged)="handleParamChanged($event)"
+    ></arra-table>
+  </div>
+</div>
